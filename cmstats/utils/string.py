@@ -5,6 +5,8 @@ def parse_modversion(modversion):
     # Ignore KANG versions.
     if "KANG" in modversion:
         return None
+    if "UNOFFICIAL" in modversion:
+        return None
 
     # Determine RC Version
     match_rc = re.match(r"^(CyanogenMod-)*(\d\.\d\.\d\.?\d?)-RC(\d+)-.*$", modversion)
